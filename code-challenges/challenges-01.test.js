@@ -92,6 +92,7 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
+
 const addValues = (arr, value) => {
   // Solution code here...
   arr.push(value);
@@ -100,8 +101,7 @@ const addValues = (arr, value) => {
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
   for(let index = 0; index < times; index++){
-    callback(num, arr);
-    
+    callback(arr,num);
   }
   return arr;
 };

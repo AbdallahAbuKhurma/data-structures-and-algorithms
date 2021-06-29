@@ -6,3 +6,4 @@
 
 1. [Code Challenge 401 - Class-01](code-challenge-401/README.md)
 2. [Code challenge 401 - Class-02](code-challenge-401-class02/README.md)
+3. [Code challenge 401 - Class-03](code-challenge-401-class03/README.md)

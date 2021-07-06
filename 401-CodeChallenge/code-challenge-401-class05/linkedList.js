@@ -1,6 +1,10 @@
 'use strict';
 
-const Node = require('./node');
+class Node {
+  constructor(value) {
+    this.value = value;
+  }
+}
 
 class LinkedList {
   constructor() {
@@ -8,32 +12,18 @@ class LinkedList {
   }
 
   insert(value) {
-    const node = new Node(value);
-    if(!this.head) {
-      this.head = node;
-    } else {
-      node.next = this.head;
-      this.head = node;
+    if (!value) {
+      return 'nothing';
     }
-  }
-
-  append(value) {
-    const node = new Node(value);
-    if(!this.head) {
-      this.head = node;
-    } else {
-      let currentNode = this.head;
-      while(currentNode.next) {
-        currentNode = currentNode.next;
-      }
-      currentNode.next = node;
-    }
+    let current = new Node(value);
+    current.next = this.head;
+    this.head = current;
   }
 
   includes(value) {
     let current = this.head;
     if (!value) {
-      throw new Error('Wrong value went as argument');
+      throw new Error('Improper value passed as argument');
     }
     if (!current) {
       throw new Error('Linked List invalid');
@@ -60,6 +50,41 @@ class LinkedList {
     return finalStr += 'NULL';
   }
 
+  append(value) {
+    let current = this.head;
+    if (!current) {
+      this.head = new Node(value);
+    } else {
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = new Node(value);
+    }
+  }
+  insertBefore(value, targetValue) {
+    let current = this.head;
+    if (current.value === targetValue) {
+      this.insert(value);
+    } else {
+      while (current.next.value !== targetValue) {
+        current = current.next;
+      }
+      let temp = new Node(value);
+      temp.next = current.next;
+      current.next = temp;
+    }
+  }
+  insertAfter(value, targetValue) {
+    let current = this.head;
+    while (current.value !== targetValue) {
+      current = current.next;
+    }
+    let temp = new Node(value);
+    temp.next = current.next;
+    current.next = temp;
+  }
 }
-
-module.exports = LinkedList;
+module.exports = {
+  ll: LinkedList,
+  node: Node
+};

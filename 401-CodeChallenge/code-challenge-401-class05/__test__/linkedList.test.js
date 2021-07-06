@@ -1,33 +1,55 @@
 'use strict';
 
-const LinkedList = require('../linkedList');
+const linkedListMaster = require('../linkedList');
 
-describe('linked list', () => {
-  it('should instantiate', () => {
+const LinkedList = linkedListMaster.ll;
+const Node = linkedListMaster.node;
+
+
+describe('testing linked list instantiation', () => {
+  it('should return a linked list', () => {
     const ll = new LinkedList();
-    expect(ll).toBeDefined();
-    expect(ll.head).toBeNull();
+    expect(ll).toBeTruthy();
   });
 });
 
-describe('insert method', () => {
-  it('should add to empty list', () => {
+describe('testing insert value function for linked list', () => {
+  it('should return a linked list with a new node added', () => {
     const ll = new LinkedList();
-    ll.insert('a');
-    expect(ll.head.value).toEqual('a');
-    expect(ll.head.next).toBeNull();
+    ll.head = new Node(0);
+    ll.head.next = new Node(1);
+    ll.head.next.next = new Node(2);
+    ll.head.next.next.next = new Node(3);
+    ll.insert(4);
+    expect(ll.head.value).toEqual(4);
   });
-  it('should add to a list with values', () => {
+
+});
+
+describe('testing linked list head points to first node in linked list', () => {
+  it('should return a value equivalent to that of the first node in the linked list', () => {
     const ll = new LinkedList();
-    ll.insert('a');
-    ll.insert('b');
-    expect(ll.head.value).toEqual('b');
-    expect(ll.head.next.value).toEqual('a');
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+
+    expect(ll.head.value).toEqual(1);
   });
 });
 
+describe('testing ability to insert multiple nodes into list', () => {
+  it('should return a linked list with multiple values', () => {
+    const ll = new LinkedList();
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(2);
+    expect(ll.head.next.next.value).toEqual(3);
+  });
+});
 
-describe('includes', () => {
+describe('testing includes function for searching for a specific value in a linked list', () => {
   it('should return true if target value is present ', () => {
     const ll = new LinkedList();
     ll.insert(3);
@@ -45,8 +67,8 @@ describe('includes', () => {
   });
 });
 
-describe('toString', () => {
-  it('to string', () => {
+describe('testing linked list toString function', () => {
+  it('should a string of the values contained within a linked list', () => {
     const ll = new LinkedList();
     ll.insert(3);
     ll.insert(2);
@@ -55,23 +77,61 @@ describe('toString', () => {
   });
 });
 
-
-describe('append to the end of the list', () => {
-  it('append test', () => {
+describe('testing linked list append function', () => {
+  it('should add a new node to the end of the linked list', () => {
     const ll = new LinkedList();
-    ll.append('a');
-    expect(ll.head.value).toEqual('a');
-    ll.append('b');
-    expect(ll.head.value).toEqual('a');
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.append(4);
+    expect(ll.head.next.next.next.value).toEqual(4);
   });
-  it('should append to list with values', () => {
+  it('should add a multiple new nodes to the end of the linked list', () => {
     const ll = new LinkedList();
-    ll.append('a');
-    ll.append('b');
-    ll.append('c');
-    expect(ll.head.value).toEqual('a');
-    expect(ll.head.next.value).toEqual('b');
-    expect(ll.head.next.next.value).toEqual('c');
-    expect(ll.head.next.next.next).toBeNull();
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.append(4);
+    ll.append(5);
+    expect(ll.head.next.next.next.value).toEqual(4);
+    expect(ll.head.next.next.next.next.value).toEqual(5);
+  });
+});
+describe('testing linked list insertBefore function', () => {
+  it('should add a new node before a target value that is the first node of the list', () => {
+    const ll = new LinkedList();
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.insertBefore(4, 1);
+    expect(ll.head.value).toEqual(4);
+  });
+  it('should add a  new node before an existing node in the middle of the linked list', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.insertBefore(7, 3);
+    expect(ll.head.next.next.value).toEqual(7);
+  });
+});
+describe('testing linked list insertAfter function', () => {
+  it('should add a new node after a target value that is a middle node in the list', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.insertAfter(5, 2);
+    expect(ll.head.next.next.value).toEqual(5);
+  });
+  it('should add a new node before the last node of the linked list', () => {
+    const ll = new LinkedList();
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    ll.insertAfter(4, 3);
+    expect(ll.head.next.next.next.value).toEqual(4);
   });
 });

@@ -1,6 +1,7 @@
 'use strict';
 
 const linkedListMaster = require('../linkedList');
+const zipList = require('../linkedList').zipList;
 
 const LinkedList = linkedListMaster.ll;
 const Node = linkedListMaster.node;
@@ -181,5 +182,21 @@ describe('testing linked list kthFromEnd function', () => {
     ll.insert(2);
     ll.insert(1);
     expect(ll.kthFromEnd(1)).toEqual(3);
+  });
+});
+
+describe('zip linked list', () => {
+  it('handles zipping two linked lists into one', () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+
+    for(let i = 0; i < 5; i++){
+      ll1.append(i);
+    }
+
+    for(let i = 0; i < 5 ; i++){
+      ll1.append(i+10);
+    }
+    expect(zipList(ll1,ll2)).toBe('{ 0 } -> { 1 } -> { 2 } -> { 3 } -> { 4 } -> { 10 } -> { 11 } -> { 12 } -> { 13 } -> { 14 } -> NULL');
   });
 });

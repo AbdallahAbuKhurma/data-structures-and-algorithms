@@ -1,8 +1,9 @@
 'use strict';
 
 class Node {
-  constructor(value) {
+  constructor(value, next = null) {
     this.value = value;
+    this.next = next;
   }
 }
 
@@ -99,7 +100,27 @@ class LinkedList {
     }
   }
 }
+
+function zipList(ll1, ll2) {
+  let current1 = ll1.head;
+  let current2 = ll2.head;
+  let ll = new LinkedList();
+
+  while(current1 || current2){
+    if(current1 !== null) {
+      ll.append(current1.value);
+      current1 = current1.next;
+    }
+    if(current2 !== null) {
+      ll.append(current2.value);
+      current2 = current2.next();
+    }
+  }
+  return ll.toString();
+}
+
 module.exports = {
   ll: LinkedList,
-  node: Node
+  node: Node,
+  zipList
 };

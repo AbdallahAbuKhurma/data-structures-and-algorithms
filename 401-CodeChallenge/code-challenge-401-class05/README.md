@@ -34,10 +34,24 @@
 
 * .insertAfter()
 
-  * Insert a node with a given value after a specified node;
+  * Insert a node with a given value after a specified node
+
+![code06](code06.png)
+
+---
 
 ## code challeng 07
 
 **Problem Domain:** to create three prototype functions of linked list class; append, insert after, and insert before;
 
 * kthFromEnd() A function that finds the value kth from the end of the linked list
+
+---
+
+## code challeng 08
+
+**Problem Domain:** to create a function that takes in two lists and returns a zipped list.
+
+* function(ll1, ll2) => takes to linked lists arreguments and ruturn it into one
+
+![code08](code08.png)

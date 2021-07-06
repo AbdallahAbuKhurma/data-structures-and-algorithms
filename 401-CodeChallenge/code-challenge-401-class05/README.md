@@ -35,3 +35,9 @@
 * .insertAfter()
 
   * Insert a node with a given value after a specified node;
+
+## code challeng 07
+
+**Problem Domain:** to create three prototype functions of linked list class; append, insert after, and insert before;
+
+* kthFromEnd() A function that finds the value kth from the end of the linked list

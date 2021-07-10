@@ -2,6 +2,7 @@
 
 const linkedListMaster = require('../linkedList');
 const zipList = require('../linkedList').zipList;
+// const reverse = require('../linkedList').reverse;
 
 const LinkedList = linkedListMaster.ll;
 const Node = linkedListMaster.node;
@@ -200,3 +201,14 @@ describe('zip linked list', () => {
     expect(zipList(ll1,ll2)).toBe('{ 0 } -> { 1 } -> { 2 } -> { 3 } -> { 4 } -> { 10 } -> { 11 } -> { 12 } -> { 13 } -> { 14 } -> NULL');
   });
 });
+
+// describe('reverse linked link function', () => {
+//   it('should reverse a linked list', () => {
+//     const ll = new LinkedList();
+//     ll.insert(1);
+//     ll.insert(2);
+//     ll.insert(3);
+//     ll.insert(4);
+//     expect(reverse(ll).toString()).toBe('{ 4 } -> { 3 } -> { 2 } -> { 1 } -> NULL');
+//   });
+// });

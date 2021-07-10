@@ -119,8 +119,23 @@ function zipList(ll1, ll2) {
   return ll.toString();
 }
 
+// function reverse (head) {
+//   let node = head;
+//   let previous;
+//   let tmp;
+
+//   while(node) {
+//     tmp = node.next;
+//     node.next = previous;
+//     previous = node;
+//     node = tmp;
+//   }
+//   return previous;
+// }
+
 module.exports = {
   ll: LinkedList,
   node: Node,
-  zipList
+  zipList,
+  // reverse
 };

@@ -10,3 +10,4 @@
 4. [Code challenge 401 - Class-05](401-CodeChallenge/code-challenge-401-class05/README.md)
 5. [Code challenge 401 - Class-10](401-code-challenges/stack-queue/README.md)
 6. [Code challenge 401 - Class-11](401-code-challenges/stack-queue-pseudo/README.md)
+7. [Code challenge 401 - Class-12](401-code-challenges/stack-queue-animal-shelter/README.md)

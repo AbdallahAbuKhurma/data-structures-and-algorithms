@@ -13,3 +13,4 @@
 7. [Code challenge 401 - Class-12](401-code-challenges/stack-queue-animal-shelter/README.md)
 8. [Code challenge 401 - Class-13](401-code-challenges/stack-queue-brackets/README.md)
 9. [Code challenge 401 - Class-14](401-code-challenges/duck-duck-goose/README.md)
+10. [Code challenge 401 - Class-15](401-code-challenges/trees/README.md)

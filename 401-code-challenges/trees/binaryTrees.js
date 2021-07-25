@@ -71,6 +71,31 @@ class BinaryTree {
     }
   }
 
+  getMaxValue(){
+    try {
+      if(!this.root){
+        return ('empty tree');
+      }
+      let maxValue = this.root.value;
+      const _traverse = (node) => {
+        if(node.value >= maxValue){
+          maxValue = node.value;
+        }
+        if(node.right){
+          _traverse(node.right);
+        }
+        if(node.left){
+          _traverse(node.left);
+        }
+      };
+      _traverse(this.root);
+      return maxValue;
+
+    } catch (error) {
+      console.error({message: error.message});
+    }
+  }
+
 }
 
 module.exports = BinaryTree;

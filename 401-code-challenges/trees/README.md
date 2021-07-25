@@ -35,3 +35,21 @@
 ## whiteboard
 
 ![tress](./trees.png)
+
+---
+
+## Code challenge 16: Get Max Value Of The Tree
+
+### challange
+
+To create a finction that holds no arreguments and to return the maximum value in the tree
+
+### Efficiency
+
+1. Space => O(n)
+
+2. Time => O(n)
+
+### whiteboard
+
+![getmax](./getmax.png)

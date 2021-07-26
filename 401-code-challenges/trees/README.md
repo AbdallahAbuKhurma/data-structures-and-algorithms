@@ -53,3 +53,19 @@ To create a finction that holds no arreguments and to return the maximum value i
 ### whiteboard
 
 ![getmax](./getmax.png)
+
+## Code challenge 17: Breadth first
+
+## challenge
+
+to craete a function called breadth first that holds a tree as an aregument and its job to return list of values in the tree, in the order they were encountered.
+
+### Efficiency
+
+1. Space => O(n)
+
+2. Time => O(n)
+
+### whiteboard
+
+![breadth](./breadth.png)

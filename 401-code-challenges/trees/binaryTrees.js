@@ -125,6 +125,37 @@ class BinaryTree {
       console.error({message: error.message});
     }
   }
+
+  treeFizzBuzz(tree) {
+    if(!this.root){
+      return 'Empty Tree';
+    }
+    tree = this.root;
+    const results = [];
+    const _traverse = (node) => {
+      if(node.value % 15 === 0) {
+        node.value = 'FizzBuzz';
+        results.push(node.value);
+      } else if(node.value % 5 === 0) {
+        node.value = 'Buzz';
+        results.push(node.value);
+      } else if(node.value % 3 === 0){
+        node.value = 'Fizz';
+        results.push(node.value);
+      } else {
+        node.value = `${node.value}`;
+        results.push(node.value);
+      }
+      if(node.left !== null){
+        _traverse(node.left);
+      }
+      if(node.right !== null){
+        _traverse(node.right);
+      }
+    };
+    _traverse(tree);
+    return results;
+  }
 }
 
 module.exports = BinaryTree;

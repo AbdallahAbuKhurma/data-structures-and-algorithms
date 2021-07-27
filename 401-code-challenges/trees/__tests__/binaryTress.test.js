@@ -86,3 +86,41 @@ describe('tree breadth fisrt', () => {
     expect(tree.breadthFirst()).toBe('empty tree');
   });
 });
+
+describe('FIZZBUZZ TREE', () => {
+  it('shoud return Fizz if the value is devidable by 3', () => {
+    let tree = new BinaryTree;
+    tree.root = new Node(3);
+    tree.root.right = new Node(6);
+    tree.root.left = new Node(9);
+    expect(tree.treeFizzBuzz()).toEqual(['Fizz','Fizz','Fizz']);
+  });
+  it('shoud return Buzz if the value is devidable by 5', () => {
+    let tree = new BinaryTree;
+    tree.root = new Node(5);
+    tree.root.right = new Node(10);
+    tree.root.left = new Node(20);
+    expect(tree.treeFizzBuzz()).toEqual(['Buzz','Buzz','Buzz']);
+  });
+  it('shoud return FizzBuzz if the value is devidable by 15', () => {
+    let tree = new BinaryTree;
+    tree.root = new Node(15);
+    tree.root.right = new Node(30);
+    tree.root.left = new Node(45);
+    expect(tree.treeFizzBuzz()).toEqual(['FizzBuzz','FizzBuzz','FizzBuzz']);
+  });
+  it('should return Fizz Buzz Tree', () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(2);
+    tree.root.left = new Node(3);
+    tree.root.left.left = new Node(1);
+    tree.root.left.right = new Node(6);
+    tree.root.left.right.left = new Node(5);
+    tree.root.left.right.right = new Node(15);
+    tree.root.right = new Node(10);
+    tree.root.right.right = new Node(45);
+    tree.root.right.right.left = new Node(4);
+    expect(tree.treeFizzBuzz()).toEqual(['2','Fizz','1','Fizz','Buzz','FizzBuzz','Buzz','FizzBuzz','4']);
+  });
+});
+

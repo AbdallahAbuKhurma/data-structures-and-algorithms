@@ -106,13 +106,13 @@ class BinaryTree {
       queue.push(tree);
 
       const _traverse = (node) => {
-        while(queue.length > 0){
+        while (queue.length > 0) {
           node = queue[0];
           results.push(node.value);
-          if(node.left !== null){
+          if (node.left !== null) {
             queue.push(node.left);
           }
-          if(node.right !== null){
+          if (node.right !== null) {
             queue.push(node.right);
           }
           queue.shift();
@@ -120,36 +120,35 @@ class BinaryTree {
       };
       _traverse(tree);
       return results;
-
     } catch (error) {
-      console.error({message: error.message});
+      console.error({ message: error.message });
     }
   }
 
   treeFizzBuzz(tree) {
-    if(!this.root){
+    if (!this.root) {
       return 'Empty Tree';
     }
     tree = this.root;
     const results = [];
     const _traverse = (node) => {
-      if(node.value % 15 === 0) {
+      if (node.value % 15 === 0) {
         node.value = 'FizzBuzz';
         results.push(node.value);
-      } else if(node.value % 5 === 0) {
+      } else if (node.value % 5 === 0) {
         node.value = 'Buzz';
         results.push(node.value);
-      } else if(node.value % 3 === 0){
+      } else if (node.value % 3 === 0) {
         node.value = 'Fizz';
         results.push(node.value);
       } else {
         node.value = `${node.value}`;
         results.push(node.value);
       }
-      if(node.left !== null){
+      if (node.left !== null) {
         _traverse(node.left);
       }
-      if(node.right !== null){
+      if (node.right !== null) {
         _traverse(node.right);
       }
     };
@@ -157,5 +156,4 @@ class BinaryTree {
     return results;
   }
 }
-
 module.exports = BinaryTree;

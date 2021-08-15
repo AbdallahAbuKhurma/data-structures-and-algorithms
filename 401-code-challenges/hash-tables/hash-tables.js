@@ -96,6 +96,21 @@ class HashTable {
       console.error(error);
     }
   }
+
+  repeatedWord(string){
+    if(!string){
+      return null;
+    }
+    const hashTable = new HashTable(3000);
+    const key = string.toLowerCase().split(',').join('').split(' ');
+    for (let index = 0; index < key.length; index++) {
+      if(hashTable.contain(key[index])){
+        return key[index];
+      } else {
+        hashTable.add(key[index]);
+      }
+    }
+  }
 }
 
 // const hashTable = new HashTable(3000);

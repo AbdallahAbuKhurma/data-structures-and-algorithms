@@ -12,6 +12,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
 * hash Arguments: key Returns: Index in the collection for that key
 
+* repeatedWord Arguments: string Returns: repeated word into the string sentance.
+
 ## Approach & Efficiency
 
 1. Time:
@@ -24,6 +26,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * hash: O(n)
 
+    * repeatedWord: O(n)
+
 2. Space:
 
     * add: O(n)
@@ -34,6 +38,10 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * hash: O(1)
 
+    * repeatedWord O(1)
+
 ## UML
 
 ![hash](./hash.png)
+
+![repeated](./repeated.png)

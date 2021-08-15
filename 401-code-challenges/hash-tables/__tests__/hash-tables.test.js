@@ -34,3 +34,23 @@ describe('hash tables', () => {
     expect(hashTable.hash('junior')).toEqual(597);
   });
 });
+
+describe('repeated word function', () => {
+  it('should return the repeated word which is (summer)', () => {
+    const hashTable = new HashTable(3000);
+    const string = 'It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...';
+    expect(hashTable.repeatedWord(string)).toBe('summer');
+  });
+
+  it('should return the repeated word which is ( a letter )', () => {
+    const hashTable = new HashTable(3000);
+    const string = 'Once upon a time, there was a brave princess who...';
+    expect(hashTable.repeatedWord(string)).toBe('a');
+  });
+
+  it('should return the null if there is no string', () => {
+    const hashTable = new HashTable(3000);
+    const string = '';
+    expect(hashTable.repeatedWord(string)).toBe(null);
+  });
+});

@@ -14,6 +14,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
 * repeatedWord Arguments: string Returns: repeated word into the string sentance.
 
+* tree-intersection Arguments: Two Binary Tress Returns: the dublicated nodes values in the fisrt and second tree
+
 ## Approach & Efficiency
 
 1. Time:
@@ -28,6 +30,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * repeatedWord: O(n)
 
+    * tree-intersection: O(n)
+
 2. Space:
 
     * add: O(n)
@@ -40,8 +44,16 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * repeatedWord O(1)
 
-## UML
+    * tree-intersection: O(n)
+
+## HashTable implementation UML
 
 ![hash](./hash.png)
 
+## RepeatedWord UML
+
 ![repeated](./repeated.png)
+
+## Tree-intersection UML
+
+![treeIntersection](./treeIntersection.png)

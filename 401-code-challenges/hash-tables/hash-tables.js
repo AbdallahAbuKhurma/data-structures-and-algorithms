@@ -1,5 +1,4 @@
 'use strict';
-
 class Node {
   constructor(value){
     this.value = value;
@@ -109,6 +108,24 @@ class HashTable {
       } else {
         hashTable.add(key[index]);
       }
+    }
+  }
+
+  treeIntersection(firstTree, secondTree){
+    let firstTreeValues = firstTree.preOrder();
+    let secondTreeValues = secondTree.preOrder();
+
+    let results = [];
+    for(let i = 0; i < firstTreeValues.length; i++){
+      if(firstTreeValues[i] === secondTreeValues[i]){
+        results.push(firstTreeValues[i]);
+      }
+    }
+    if(results.length){
+      // console.log(results);
+      return results;
+    } else {
+      return null;
     }
   }
 }

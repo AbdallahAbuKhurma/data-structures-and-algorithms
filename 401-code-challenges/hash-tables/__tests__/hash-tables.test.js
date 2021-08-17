@@ -104,3 +104,48 @@ describe('tree intersection',() =>{
     expect(hashTable.treeIntersection(tree1, tree2)).toBe(null);
   });
 });
+
+
+describe('left join function', () => {
+  it('should return an array of the jonied values', () => {
+    let hashtable1 = new HashTable(16);
+    let hashtable2 = new HashTable(16);
+    hashtable1.add('fond', 'enamour');
+    hashtable1.add('wrath', 'anger');
+    hashtable1.add('diligent', 'employed');
+    hashtable1.add('outfit', 'garb');
+    hashtable1.add('guide', 'usher');
+
+    hashtable2.add('fond', 'averse');
+    hashtable2.add('wrath', 'delight');
+    hashtable2.add('diligent', 'idle');
+    hashtable2.add('guide', 'follow');
+    hashtable2.add('flow', 'jam');
+
+    let results = hashtable1.leftJoin(hashtable1, hashtable2);
+    expect(results).toEqual([
+      [ 'diligent', 'employed', 'idle' ],
+      [ 'outfit', 'garb', null ],
+      [ 'wrath', 'anger', 'delight' ],
+      [ 'fond', 'enamour', 'averse' ],
+      [ 'guide', 'usher', 'follow' ]
+    ]);
+  });
+
+  it('should return null if the first or second HashTables is empty', () => {
+    let hashtable1 = new HashTable(16);
+    let hashtable2 = new HashTable(16);
+    let hashtable3 = new HashTable(16);
+
+    hashtable3.add('fond', 'enamour');
+    hashtable3.add('wrath', 'anger');
+    hashtable3.add('diligent', 'employed');
+    hashtable3.add('outfit', 'garb');
+    hashtable3.add('guide', 'usher');
+
+    let result = hashtable1.leftJoin(hashtable1, hashtable2);
+    let result2 = hashtable1.leftJoin(hashtable1, hashtable3);
+    expect(result).toBe(null);
+    expect(result2).toBe(null);
+  });
+});

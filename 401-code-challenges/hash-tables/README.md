@@ -16,6 +16,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
 * tree-intersection Arguments: Two Binary Tress Returns: the dublicated nodes values in the fisrt and second tree
 
+* left-join Aregument: Two hash maps Returns: data structure that holds the results (joined two hash map)
+
 ## Approach & Efficiency
 
 1. Time:
@@ -32,6 +34,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * tree-intersection: O(n)
 
+    * left-join: O(n)
+
 2. Space:
 
     * add: O(n)
@@ -46,14 +50,20 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * tree-intersection: O(n)
 
+    * left-join: O(n)
+
 ## HashTable implementation UML
 
-![hash](./hash.png)
+![hash](./assets/hash.png)
 
 ## RepeatedWord UML
 
-![repeated](./repeated.png)
+![repeated](./assets/repeated.png)
 
 ## Tree-intersection UML
 
-![treeIntersection](./treeIntersection.png)
+![treeIntersection](./assets/treeIntersection.png)
+
+## hashmap-left-join UML
+
+![left](./assets/left.jpg)

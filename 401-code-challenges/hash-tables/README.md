@@ -18,6 +18,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
 * left-join Aregument: Two hash maps Returns: data structure that holds the results (joined two hash map)
 
+* uniqueCharacters Aregument: String Returns: boolean (true or false)
+
 ## Approach & Efficiency
 
 1. Time:
@@ -36,6 +38,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * left-join: O(n)
 
+    * uniqueCharacters: O(n)
+
 2. Space:
 
     * add: O(n)
@@ -52,6 +56,8 @@ Hash table (hash map) is a data structure that implements an associative array a
 
     * left-join: O(n)
 
+    * uniqueCharacters: O(1)
+
 ## HashTable implementation UML
 
 ![hash](./assets/hash.png)
@@ -67,3 +73,7 @@ Hash table (hash map) is a data structure that implements an associative array a
 ## hashmap-left-join UML
 
 ![left](./assets/left.jpg)
+
+## unique-Characters UML
+
+![uni](./assets/uni.png)

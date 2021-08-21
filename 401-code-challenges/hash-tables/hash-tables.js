@@ -155,6 +155,17 @@ class HashTable {
     }
     return result.length === 0 ? null : result;
   }
+
+  uniqueCharacters(string) {
+    const hashTable = new HashTable(4000);
+    for(let char in string) {
+      if (string[char] !== ' ' && hashTable.contain(string[char])){
+        return false;
+      }
+      hashTable.add(string[char]);
+    }
+    return true;
+  }
 }
 
 // const hashTable = new HashTable(3000);

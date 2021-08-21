@@ -149,3 +149,15 @@ describe('left join function', () => {
     expect(result2).toBe(null);
   });
 });
+
+describe('Unique Characters', () => {
+  it('should return true because all the cher are unique', () => {
+    const hashTable = new HashTable(4000);
+    expect(hashTable.uniqueCharacters('I love cats')).toBe(true);
+  });
+
+  it('should return false because there are repeated cher', () => {
+    const hashTable = new HashTable(4000);
+    expect(hashTable.uniqueCharacters('Donald the duck')).toBe(false);
+  });
+});
